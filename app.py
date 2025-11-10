@@ -216,9 +216,10 @@ async def websocket_endpoint(websocket: WebSocket, room: str):
     finally:
         rooms.get(room, set()).discard(websocket)
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     import os
     port = int(os.environ.get("PORT", 10000))
+    print(f"🚀 Server running on port {port}")
     uvicorn.run("app:app", host="0.0.0.0", port=port)
+
 
